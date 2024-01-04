@@ -7,9 +7,9 @@ import ServerSidebar from './../../../../../components/server/ServerSidebar';
 
 const ServerIdLayout = async ({children,params}:{children:React.ReactNode,params:{serverId:string}}) => {
   const profile=await currentProfile();
-  if(!profile)
-    return redirectToSignIn();
-
+    if(!profile){
+      return redirectToSignIn();
+    }
   const server=await db.server.findUnique({
     where:{
       id:params.serverId,

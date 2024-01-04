@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initial-profile"
 import { redirect } from 'next/navigation';
 
-const SetupPage = async({}) => {
+const SetupPage = async() => {
   const profile = await initialProfile();
 
   const server=await db.server.findFirst({
@@ -16,7 +16,8 @@ const SetupPage = async({}) => {
     }
   })
   if(server){
-    return redirect(`server/${server.id}`)
+    console.log(server.id);
+    return redirect(`/server/${server.id}`)
   }
 
   return (
