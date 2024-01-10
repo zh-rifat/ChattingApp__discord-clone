@@ -6,7 +6,7 @@ import { useModal } from '@/hooks/useModalHook';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Check, Copy, RefreshCw } from 'lucide-react';
-import { useOrigin } from './../../hooks/useOrigin';
+import { useOrigin } from '@/hooks/useOrigin';
 import { useState } from 'react';
 import axios from 'axios';
 

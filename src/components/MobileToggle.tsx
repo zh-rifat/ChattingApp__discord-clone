@@ -2,7 +2,7 @@ import { Menu } from "lucide-react";
 
 import {Sheet,SheetContent,SheetTrigger} from '@/components/ui/sheet';
 import { Button } from "./ui/button";
-import NavigationSidebar from "./navigation/NavigationSidebar";
+import {NavigationSidebar} from "./navigation/NavigationSidebar";
 import ServerSidebar from "./server/ServerSidebar";
 import { FC } from "react";
 

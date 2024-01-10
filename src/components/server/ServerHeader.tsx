@@ -1,6 +1,6 @@
 'use client'
 
-import { ServerWithMembersWithProfiles } from "../../../types"
+import { ServerWithMembersWithProfiles } from "@/types"
 import { MemberRole } from '@prisma/client';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { ChevronDown, LogOut, PlusCircle, Settings, Trash, UserPlus, Users } from "lucide-react";

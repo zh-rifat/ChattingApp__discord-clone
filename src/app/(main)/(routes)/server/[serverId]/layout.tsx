@@ -1,9 +1,9 @@
 
-import { currentProfile } from './../../../../../lib/current-profile';
+import { currentProfile } from '@/lib/current-profile';
 import { redirectToSignIn } from '@clerk/nextjs';
 import { db } from '@/lib/db';
 import { redirect } from 'next/navigation';
-import ServerSidebar from './../../../../../components/server/ServerSidebar';
+import ServerSidebar from '@/components/server/ServerSidebar';
 
 const ServerIdLayout = async ({children,params}:{children:React.ReactNode,params:{serverId:string}}) => {
   const profile=await currentProfile();

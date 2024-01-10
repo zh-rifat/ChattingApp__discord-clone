@@ -7,6 +7,4 @@
   > `npm install uploadthing @uploadthing/react react-dropzone`
   - copy
 
-``07:36:00`` **pending installations:**
->* npx shadcn-ui@latest add sheet
->* 
+``08:08:00`` 

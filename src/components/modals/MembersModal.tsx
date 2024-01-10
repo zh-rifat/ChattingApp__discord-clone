@@ -8,9 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Check, Gavel, Loader2, MoreVertical, Shield, ShieldAlert, ShieldCheck, ShieldQuestion } from 'lucide-react';
 import { useState } from 'react';
 import axios from 'axios';
-import { ServerWithMembersWithProfiles } from '../../../types';
-import { ScrollArea } from '../ui/scroll-area';
-import UserAvatar from './../UserAvatar';
+import { ServerWithMembersWithProfiles } from '@/types';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import UserAvatar from '@/components/UserAvatar';
 import {DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuPortal,DropdownMenuSeparator,DropdownMenuSub,DropdownMenuSubContent,DropdownMenuTrigger,DropdownMenuSubTrigger} from '@/components/ui/dropdown-menu'
 import { MemberRole } from '@prisma/client';
 import qs from 'query-string';

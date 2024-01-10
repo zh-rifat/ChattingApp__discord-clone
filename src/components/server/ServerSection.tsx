@@ -1,7 +1,7 @@
 'use client'
 import { ChannelType, MemberRole } from '@prisma/client'
 import { FC } from 'react'
-import { ServerWithMembersWithProfiles } from '../../../types';
+import { ServerWithMembersWithProfiles } from '@/types';
 import ActionTooltip from '../ActionTooltip';
 import { Plus, Settings } from 'lucide-react';
 import { useModal } from '@/hooks/useModalHook';

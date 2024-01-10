@@ -8,7 +8,7 @@ import { ScrollArea } from '../ui/scroll-area';
 import NavigationItem from './NavigationItem';
 import { ModeToggle } from '../mode-toggle';
 import { UserButton } from '@clerk/nextjs';
-const NavigationSidebar = async() => {
+export const NavigationSidebar = async() => {
   const profile=await currentProfile();
   if(!profile)
     return redirect('/');
@@ -52,4 +52,3 @@ const NavigationSidebar = async() => {
   )
 }
 
-export default NavigationSidebar
