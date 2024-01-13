@@ -56,9 +56,30 @@ const ChatItem: FC<ChatItemProps> = (p:ChatItemProps) => {
     }
   });
 
-  const onSubmit=(values)=>{
-    console.log(values)
+  const isLoading=form.formState.isSubmitting;
+  const onSubmit= async(values:z.infer<typeof formSchema>)=>{
+    try {
+      const url=qs.stringifyUrl({
+        url:`${p.socketUrl}/${p.id}`,
+        query:p.socketQuery
+      });
+      await axios.patch(url,values);
+    } catch (error) {
+      console.log(error)
+    }
   }
+
+  useEffect(()=>{
+    const handleKeydown=(e:any)=>{
+      if(e.key==='Escape'||e.keyCode===27){
+        setIsEditing(false);
+      }
+    }
+    window.addEventListener('keydown',handleKeydown);
+
+    return ()=>window.removeEventListener('keydown',handleKeydown);
+  },[]);
+
 
   useEffect(() => {
     form.reset({
@@ -152,6 +173,7 @@ const ChatItem: FC<ChatItemProps> = (p:ChatItemProps) => {
                       <FormControl>
                         <div>
                           <Input
+                            disabled={isLoading}
                             className='p-2 bg-zinc-200/90 dark:bg-zinc-700/75 border-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200'
                             placeholder='Edited message'
                             {...field}
@@ -161,7 +183,7 @@ const ChatItem: FC<ChatItemProps> = (p:ChatItemProps) => {
                     </FormItem>
                   )}
                 />
-                <Button size="sm" variant="primary">
+                <Button disabled={isLoading} size="sm" variant="primary">
                     Save
                 </Button>
               </form>
