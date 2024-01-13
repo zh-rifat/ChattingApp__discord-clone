@@ -4,7 +4,7 @@ import { Member, Server } from '@prisma/client'
 import { FC } from 'react'
 import { Profile } from '@prisma/client';
 import { useParams, useRouter } from 'next/navigation';
-import { roleIconMap } from './iconmap';
+import { roleIconMap } from '../../lib/iconmap';
 import { cn } from '@/lib/utils';
 import UserAvatar from '../UserAvatar';
 

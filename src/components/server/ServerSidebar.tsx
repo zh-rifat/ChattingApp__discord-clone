@@ -5,7 +5,7 @@ import { db } from '@/lib/db';
 import { ChannelType, MemberRole } from '@prisma/client';
 import ServerHeader from './ServerHeader';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { iconMap,roleIconMap } from './iconmap';
+import { iconMap,roleIconMap } from '../../lib/iconmap';
 import { ServerSearch } from './ServerSearch';
 import { Separator } from '../ui/separator';
 import ServerSection from './ServerSection';

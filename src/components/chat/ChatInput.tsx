@@ -10,11 +10,12 @@ import {
   FormField,FormItem
 } from '@/components/ui/form';
 import {  Input}from '@/components/ui/input';
-import { Plus, Smile } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import axios from 'axios';
 import qs from 'query-string';
 import { useModal } from '@/hooks/useModalHook';
 import EmojiPicker from '@/components/EmojiPicker';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -38,7 +39,8 @@ const ChatInput: FC<ChatInputProps> = ({apiUrl,query,name,type}) => {
       content:''
     }
   });
-  const {onOpen}=useModal() 
+  const {onOpen}=useModal();
+  const router=useRouter();
 
   const isLoading=form.formState.isSubmitting;
   const onSubmit=async(values:z.infer<typeof formSchema>)=>{
@@ -49,6 +51,11 @@ const ChatInput: FC<ChatInputProps> = ({apiUrl,query,name,type}) => {
       });
 
       await axios.post(url,values);
+      form.reset();
+      router.refresh();
+      
+
+
     } catch (error) {
       console.log(error)
     }

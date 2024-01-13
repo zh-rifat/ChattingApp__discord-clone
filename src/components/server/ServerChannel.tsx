@@ -1,7 +1,7 @@
 'use client'
 
 import { Channel, ChannelType, MemberRole, Server } from '@prisma/client'
-import { iconMapx,roleIconMap } from './iconmap';
+import { iconMapx,roleIconMap } from '../../lib/iconmap';
 import { FC } from 'react'
 import { useParams, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
